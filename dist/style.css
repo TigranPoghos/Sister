@@ -122,6 +122,9 @@ body {
   font-family: var(--font-family);
   position: relative;
 }
+body.active {
+  overflow: hidden;
+}
 
 .container {
   width: 100%;
@@ -274,9 +277,13 @@ body {
   transform: translate(-50%, -50%);
   position: absolute;
   z-index: 1;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
 }
 .info__fon {
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(5px);
   background: rgba(75, 31, 31, 0.2);
   width: 100%;
   height: 100%;
@@ -306,6 +313,10 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.info__bottom-text {
+  display: flex;
+  justify-content: center;
+}
 .info__line {
   height: 3px;
   width: 100%;
@@ -319,6 +330,46 @@ body {
   font-size: 64px;
   color: #f8f9f3;
   text-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.39), 0 35px 35px 0 rgba(0, 0, 0, 0.34), 0 80px 48px 0 rgba(0, 0, 0, 0.2), 0 142px 57px 0 rgba(0, 0, 0, 0.06), 0 221px 62px 0 rgba(0, 0, 0, 0.01);
+}
+
+.burger__button {
+  position: absolute;
+  z-index: 100;
+  right: 25px;
+  top: 50px;
+}
+.burger__button svg {
+  width: 40px;
+}
+.burger__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.burger__menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #e2ded5;
+  padding: 40px;
+  border-radius: 0 0 44px 44px;
+  z-index: 1000;
+  justify-content: center;
+}
+.burger__menu .header__menu {
+  flex-direction: column;
+  gap: 10px;
+  max-width: max-content;
+}
+.burger__menu .header__menu-item {
+  padding: 8px 32px;
+  background: #9e9b96;
+  width: 100%;
+}
+.burger__menu .header__menu-item .text {
+  font-size: 14px;
+  color: #f5f6f0;
 }
 
 .service {
@@ -650,6 +701,28 @@ body {
   flex-direction: column;
 }
 
+.opacite {
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  top: 0;
+}
+.opacite.active {
+  display: flex;
+}
+
+.mobile768 {
+  display: none;
+}
+
+.mobileHid {
+  display: flex;
+}
+
 @media (max-width: 1440px) {
   .subtitle {
     font-size: 26px;
@@ -891,5 +964,255 @@ body {
   }
   .footer__img img {
     max-height: 582px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  .title {
+    font-size: 33px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  .text {
+    font-size: 10px;
+  }
+  .header__row {
+    padding: 40px 0;
+  }
+  .info__bottom {
+    margin-top: auto;
+  }
+  .info__name {
+    font-size: 50px;
+  }
+  .info__line {
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .info__row {
+    padding-bottom: 14px;
+  }
+  .service__sign-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    margin-top: auto;
+  }
+  .service__sign-date-time {
+    font-size: 10px;
+  }
+  .service__sign-date-day {
+    font-size: 12px;
+    margin-top: 30px;
+  }
+  .service__sign-line {
+    width: 1px;
+    margin: 0 10px;
+  }
+  .service__ispro-img {
+    margin-top: 10px;
+  }
+  .service__ispro-img img {
+    border: 2px solid #e2ded5;
+    max-width: 45px;
+  }
+  .service__ispro-more {
+    padding: 3px 5px;
+    font-size: 8px;
+  }
+  .service__row {
+    padding-bottom: 25px;
+  }
+  .service__card {
+    padding: 7px 10px 7px 5px;
+    border-radius: 40px;
+  }
+  .service__content-master-img {
+    margin-right: 9px;
+  }
+  .service__content-master-img img {
+    max-width: 40px;
+    border: 1px solid #f8f9f3;
+  }
+  .service__content-master-img svg {
+    width: 19px;
+  }
+  .service__content-confirm {
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+  }
+  .service__content-text {
+    margin-bottom: 10px;
+  }
+  .service__img {
+    margin-right: 20px;
+  }
+  .service__img img {
+    max-width: 125px;
+    border-radius: 40px;
+  }
+  .service__top {
+    padding: 10px 0 40px 0;
+  }
+  .service__bottom-title .title svg {
+    top: 0px;
+    right: 6px;
+  }
+  .service__bottom-line {
+    height: 2px;
+    margin: 0 10px;
+  }
+  .swiper {
+    margin-top: 30px;
+  }
+  .swiper__nav button svg {
+    width: 30px;
+  }
+  .portfolio__row {
+    padding: 25px 0;
+  }
+  .portfolio__title-star {
+    width: 59px;
+    height: 53px;
+    top: -10px;
+    left: -63px;
+  }
+  .portfolio__title-star-right {
+    right: -63px;
+    left: auto;
+  }
+  .portfolio__title-star svg:first-child {
+    width: 41px;
+    top: 0px;
+    left: 0px;
+  }
+  .portfolio__title-star svg:nth-child(2) {
+    width: 41px;
+    right: 2px;
+    bottom: 2px;
+  }
+  .portfolio__title-star svg:nth-child(3) {
+    width: 14px;
+    top: auto;
+    right: 2px;
+  }
+  .portfolio__title-star svg:last-child {
+    width: 14px;
+    left: auto;
+    bottom: 2px;
+  }
+  .footer__contact {
+    padding: 30px 10px 30px 15px;
+  }
+  .footer__contact .subtitle {
+    margin-bottom: 20px;
+  }
+  .footer__img img {
+    max-height: 450px;
+  }
+  .footer__social {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .footer__social-tel {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .footer__social-item p {
+    font-size: 14px;
+  }
+  .footer__social-item svg, .footer__social-item img {
+    max-width: 33px;
+  }
+  .footer__line {
+    height: 200px;
+  }
+  .footer__line-block {
+    margin-right: 85px;
+  }
+  .footer__line-block .footer__logo {
+    display: none;
+  }
+  .footer__logo {
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+  }
+  .footer__logo img {
+    max-width: 48px;
+  }
+  .footer__name {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+  .mobileHid {
+    display: none;
+  }
+  .mobile768 {
+    display: flex;
+  }
+  .burger__menu {
+    display: none;
+  }
+  .burger__menu.active {
+    display: flex;
+  }
+}
+@media (max-width: 530px) {
+  .price {
+    background: none;
+  }
+  .price__img {
+    position: absolute;
+    z-index: -1;
+    max-width: 100%;
+  }
+  .price__list {
+    margin-bottom: 20px;
+    gap: 8px;
+  }
+  .price__list-item {
+    gap: 5px;
+  }
+  .price__content {
+    padding: 25px 15px;
+  }
+  .price__content .title {
+    margin-bottom: 20px;
+  }
+  .service__top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service__sign-line {
+    margin: 0px 25px;
+    height: 72px;
+  }
+  .service__sign-button {
+    padding: 10px 80px;
+    margin-top: 20px;
+  }
+  .service__sign-date-day {
+    margin-top: 15px;
+  }
+  .service__ispro-img {
+    margin-top: 15px;
+    flex-direction: row;
+  }
+  .service__ispro-img img {
+    margin-top: 0;
+    margin-left: -22px;
+  }
+  .service__ispro-img img:first-child {
+    margin-left: 0;
+  }
+  .service__ispro-more {
+    margin-left: 5px;
+    max-height: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
