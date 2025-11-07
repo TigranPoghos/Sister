@@ -1208,15 +1208,29 @@ body.active {
     align-items: center;
   }
   .service__sign-line {
-    margin: 0px 25px;
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
     height: 72px;
   }
   .service__sign-button {
     padding: 10px 80px;
     margin-top: 20px;
   }
+  .service__sign-date {
+    align-items: center;
+    width: 120px;
+  }
   .service__sign-date-day {
     margin-top: 15px;
+    font-size: 14px;
+  }
+  .service__sign-date-time {
+    font-size: 12px;
+  }
+  .service__sign-content {
+    gap: 30px;
   }
   .service__ispro-img {
     margin-top: 15px;
@@ -1234,5 +1248,6 @@ body.active {
     max-height: max-content;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 0;
   }
 }

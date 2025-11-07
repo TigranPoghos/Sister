@@ -1548,7 +1548,10 @@ body {
 
         &__sign {
             &-line {
-                margin: 0px 25px;
+                position: absolute;
+                left: 50%;
+                margin: 0;
+                transform: translateX(-50%);
                 height: 72px;
             }
 
@@ -1557,8 +1560,22 @@ body {
                 margin-top: 20px;
             }
 
-            &-date-day {
-                margin-top: 15px;
+            &-date {
+                align-items: center;
+                width: 120px;
+
+                &-day {
+                    margin-top: 15px;
+                    font-size: 14px;
+                }
+
+                &-time {
+                    font-size: 12px;
+                }
+            }
+
+            &-content {
+                gap: 30px;
             }
         }
 
@@ -1582,6 +1599,7 @@ body {
                 max-height: max-content;
                 margin-top: auto;
                 margin-bottom: auto;
+                margin-right: 0;
             }
         }
     }
