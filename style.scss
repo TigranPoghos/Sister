@@ -274,6 +274,12 @@ body {
     flex-direction: column;
 }
 
+@supports (height: 100dvh) {
+  .info {
+    height: 100dvh;
+  }
+}
+
 .info {
     height: 100vh;
     position: relative;
