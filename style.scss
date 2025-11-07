@@ -274,12 +274,6 @@ body {
     flex-direction: column;
 }
 
-@supports (height: 100dvh) {
-  .info {
-    height: 100dvh;
-  }
-}
-
 .info {
     height: 100vh;
     position: relative;
@@ -367,6 +361,12 @@ body {
         color: #f8f9f3;
         text-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.39), 0 35px 35px 0 rgba(0, 0, 0, 0.34), 0 80px 48px 0 rgba(0, 0, 0, 0.2), 0 142px 57px 0 rgba(0, 0, 0, 0.06), 0 221px 62px 0 rgba(0, 0, 0, 0.01);
     }
+}
+
+@supports (height: 100dvh) {
+  .info {
+    height: 100dvh;
+  }
 }
 
 .burger {
