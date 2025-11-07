@@ -319,10 +319,13 @@ body.active {
 }
 .info__line {
   height: 3px;
-  width: 100%;
+  width: 0;
   background: #f8f9f3;
   margin: 12px 0 21px 0;
   box-sizing: border-box;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 }
 .info__name {
   font-family: var(--font3);
@@ -539,7 +542,7 @@ body.active {
 }
 .service__bottom-line {
   margin: 0 45px;
-  width: 100%;
+  width: 0;
   height: 3px;
   background: #8b7d70;
 }
@@ -569,7 +572,11 @@ body.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 500px;
+  max-width: 400px;
+}
+.swiper-slide img {
+  height: 500px;
+  width: 100%;
 }
 
 .advantages {
@@ -878,6 +885,12 @@ body.active {
   .swiper__nav button svg {
     width: 45px;
   }
+  .swiper-slide {
+    max-width: 300px;
+  }
+  .swiper-slide img {
+    height: 400px;
+  }
   .portfolio__title-star {
     width: 69px;
     height: 62px;
@@ -1070,6 +1083,12 @@ body.active {
   }
   .swiper__nav button svg {
     width: 30px;
+  }
+  .swiper-slide {
+    max-width: 200px;
+  }
+  .swiper-slide img {
+    height: 300px;
   }
   .portfolio__row {
     padding: 25px 0;

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 0,
+        slidesPerView: 'auto',
+        spaceBetween: 15,
         navigation: {
             nextEl: ".swiper__button-next",
             prevEl: ".swiper__button-prev",
@@ -77,11 +77,37 @@ document.addEventListener("DOMContentLoaded", function(){
                 scrollTrigger: {
                     trigger: elem,
                     start: "top 80%",
-                    toggleActions: "play none none none"
+                    toggleActions: "play none none none",
+                    scrub: false,
                 }
             }
         );
     });
+
+    gsap.to('.info__line', {
+        width: '100%',
+        duration: 1,
+    })
+
+    gsap.to('.service__bottom-line', {
+        width: '100%',
+        duration: 1,
+        scrollTrigger: {
+            trigger: '.service__bottom-title',
+            start: '100% bottom',
+            scrub: false,
+        }
+    })
+
+    gsap.from('.portfolio__title-star', {
+        rotateY: 180,
+        duration: 1,
+        scrollTrigger: {
+            trigger: '.portfolio__title-star',
+            start: '100% bottom',
+            scrub: false,
+        }
+    })
 
 
 })

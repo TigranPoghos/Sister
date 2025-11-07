@@ -345,10 +345,13 @@ body {
 
     &__line {
         height: 3px;
-        width: 100%;
+        width: 0;
         background: #f8f9f3;
         margin: 12px 0 21px 0;
         box-sizing: border-box;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
     }
 
     &__name {
@@ -603,7 +606,7 @@ body {
         
         &-line {
             margin: 0 45px;
-            width: 100%;
+            width: 0;
             height: 3px;
             background: #8b7d70;
         }
@@ -639,7 +642,12 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 500px;
+        max-width: 400px;
+
+        & img {
+            height: 500px;
+            width: 100%;
+        }
     }
 }
 
@@ -1070,6 +1078,14 @@ body {
                 }
             }
         }
+
+        &-slide {
+            max-width: 300px;
+
+            & img {
+                height: 400px;
+            }
+        }
     }
 
     .portfolio {
@@ -1355,6 +1371,14 @@ body {
                 & svg {
                     width: 30px;
                 }
+            }
+        }
+
+        &-slide {
+            max-width: 200px;
+
+            & img {
+                height: 300px;
             }
         }
     }
