@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
             { 
             opacity: 1, 
             y: 0, 
-            duration: 0.6, 
+            duration: 1, 
             ease: "power2.out",
                 scrollTrigger: {
                     trigger: elem,
@@ -108,6 +108,33 @@ document.addEventListener("DOMContentLoaded", function(){
             scrub: false,
         }
     })
+
+    gsap.utils.toArray('.price__list-item svg').forEach(svg => {
+        gsap.from(svg, {
+            scrollTrigger: {
+                trigger: svg,
+                start: 'bottom 100%',
+                toggleActions: 'play none none reverse', 
+            },
+            rotate: 180,
+            duration: 1,
+        });
+    });
+
+    gsap.utils.toArray('.price__list-item').forEach(item => {
+        gsap.fromTo(item, 
+            { opacity: 0, y: 20 }, 
+        { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1,
+            scrollTrigger: {
+                trigger: item,
+                start: 'bottom 100%',
+                toggleActions: 'play none none reverse', 
+            },
+        });
+    });
 
 
 })
