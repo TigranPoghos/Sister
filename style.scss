@@ -147,6 +147,12 @@ body {
     z-index: 100;
     background: transparent;
 
+    &__gold {
+        & .text {
+            color: #8b7d70;
+        }
+    }
+
     &__row {
         padding: 50px 0;
         justify-content: space-between;

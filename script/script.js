@@ -137,4 +137,36 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
+
+    function updateHeaderOnScroll() {
+    const header = document.getElementById('header');
+    if (!header) return;
+    
+    const goldSections = document.querySelectorAll('[data-header-class="header__gold"]');
+    let isInGoldSection = false;
+    
+    const scrollPosition = window.scrollY;
+    
+    goldSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        // Точное нахождение внутри секции
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        isInGoldSection = true;
+        }
+    });
+    
+    if (isInGoldSection) {
+        header.classList.add('header__gold');
+    } else {
+        header.classList.remove('header__gold');
+    }
+    }
+
+    window.addEventListener('scroll', updateHeaderOnScroll);
+    updateHeaderOnScroll();
+
+
+
 })

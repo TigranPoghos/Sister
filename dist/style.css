@@ -146,6 +146,9 @@ body.active {
   z-index: 100;
   background: transparent;
 }
+.header__gold .text {
+  color: #8b7d70;
+}
 .header__row {
   padding: 50px 0;
   justify-content: space-between;
