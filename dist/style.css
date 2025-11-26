@@ -573,18 +573,37 @@ body.active {
   margin-top: 40px;
 }
 .swiper-slide {
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   max-width: 400px;
+  height: 500px !important;
+  position: relative;
+  align-items: end;
+}
+.swiper-slide-text {
+  padding: 30px;
+  width: 100%;
+  border-radius: 25px;
+  background: #fff;
+  opacity: 0.7;
+  text-align: center;
 }
 .swiper-slide img {
-  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
+  border-radius: 25px;
 }
 
 .advantages {
   background: #cfcfcf;
+  background-image: url("");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .advantages__row {
   flex-direction: column;
@@ -593,6 +612,29 @@ body.active {
 .advantages .subtitle {
   opacity: 0.7;
   margin-top: 30px;
+}
+.advantages__text {
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+}
+.advantages__text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.advantages__block {
+  position: relative;
+  display: flex;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+.advantages__block img {
+  width: 400px;
+  height: auto;
 }
 
 .portfolio {
@@ -700,7 +742,7 @@ body.active {
   width: 100%;
 }
 .price__img img {
-  max-height: 1153px;
+  max-height: 100%;
   width: 100%;
   height: 100%;
 }
@@ -891,9 +933,7 @@ body.active {
   }
   .swiper-slide {
     max-width: 300px;
-  }
-  .swiper-slide img {
-    height: 400px;
+    height: 400px !important;
   }
   .portfolio__title-star {
     width: 69px;
@@ -1090,9 +1130,10 @@ body.active {
   }
   .swiper-slide {
     max-width: 200px;
+    height: 300px !important;
   }
-  .swiper-slide img {
-    height: 300px;
+  .swiper-slide-text {
+    padding: 20px;
   }
   .portfolio__row {
     padding: 25px 0;
@@ -1182,6 +1223,13 @@ body.active {
   }
   .burger__menu.active {
     display: flex;
+  }
+  .advantages__block img {
+    width: 275px;
+  }
+  .advantages__text-block {
+    width: 240px;
+    height: 240px;
   }
 }
 @media (max-width: 530px) {
