@@ -715,6 +715,7 @@ body.active {
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: space-between;
 }
 .price__list-item svg {
   flex-shrink: 0;
@@ -725,13 +726,14 @@ body.active {
   font-weight: 400;
   font-size: 22px;
   max-width: 500px;
-  width: 100%;
   color: #dac1aa;
+  margin-right: auto;
 }
 .price__list-price {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 22px;
+  margin-left: 20px;
   color: #dac1aa;
 }
 .price__list:last-child {
